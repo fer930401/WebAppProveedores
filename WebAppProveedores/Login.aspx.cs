@@ -11,7 +11,24 @@ namespace WebAppProveedores
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            string urlAplicacion = HttpContext.Current.Request.ApplicationPath+"PortalUsuarios";
+            //string urlAplicacion = HttpContext.Current.Request.ApplicationPath + "PortalProveedor";
+            urlAplicacion = urlAplicacion.TrimStart('/');
 
+            if (urlAplicacion.Equals("PortalProveedor") == true)
+            {
+                ddlUsuarios.Visible = false;
+                ddlUsuarios.Enabled = false;
+                Session["visibleUsuario"] = "style = 'display:none;'";
+                Session["visibleRFC"] = "";
+            }
+            else
+            {
+                txtRFC.Visible = false;
+                txtRFC.Enabled = false;
+                Session["visibleRFC"] = "style = 'display:none;'";
+                Session["visibleUsuario"] = "";
+            }
         }
     }
 }

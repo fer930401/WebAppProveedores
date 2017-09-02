@@ -4501,7 +4501,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #222222;
+  background-color: #042644;/*#222222;*/
   border-color: #080808;
 }
 
@@ -6813,4 +6813,44 @@ td.visible-print {
   td.hidden-print {
     display: none !important;
   }
+}
+.btn-skytex {
+  color: #ffffff;
+  background-color: #042644;
+  border-color: #0F64AE;
+}
+
+.btn-skytex:hover,
+.btn-skytex:focus,
+.btn-skytex:active,
+.btn-suskytexccess.active,
+.open .dropdown-toggle.btn-skytex {
+  color: #ffffff;
+  background-color: #0C5A9F;
+  border-color: #0F64AE;
+}
+
+.btn-skytex:active,
+.btn-skytex.active,
+.open .dropdown-toggle.btn-skytex {
+  background-image: none;
+}
+
+.btn-skytex.disabled,
+.btn-skytex[disabled],
+fieldset[disabled] .btn-skytex,
+.btn-skytex.disabled:hover,
+.btn-skytex[disabled]:hover,
+fieldset[disabled] .btn-skytex:hover,
+.btn-skytex.disabled:focus,
+.btn-skytex[disabled]:focus,
+fieldset[disabled] .btn-skytex:focus,
+.btn-skytex.disabled:active,
+.btn-skytex[disabled]:active,
+fieldset[disabled] .btn-skytex:active,
+.btn-skytex.disabled.active,
+.btn-skytex[disabled].active,
+fieldset[disabled] .btn-skytex.active {
+  background-color: #5C8EB9;
+  border-color: #0F64AE;
 }

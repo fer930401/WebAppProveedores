@@ -104,6 +104,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Login.aspx" />
     <Content Include="Media\logoSkytex.png" />
+    <Content Include="Media\logo_skytex.png" />
     <Content Include="Media\skytex.ico" />
     <Content Include="Media\skytex.png" />
     <Content Include="packages.config" />
