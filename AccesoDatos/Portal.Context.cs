@@ -27,6 +27,7 @@ namespace AccesoDatos
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<xcuser> xcuser { get; set; }
     
         public virtual ObjectResult<consWeb_Result> consWeb(string opc, string prm1, string prm2, string prm3, Nullable<int> prm4, string prm5, string prm6, string prm7, string prm8)
         {
@@ -67,6 +68,19 @@ namespace AccesoDatos
                 new ObjectParameter("prm8", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<consWeb_Result>("consWeb", opcParameter, prm1Parameter, prm2Parameter, prm3Parameter, prm4Parameter, prm5Parameter, prm6Parameter, prm7Parameter, prm8Parameter);
+        }
+    
+        public virtual ObjectResult<sp_accesoweb_Result> sp_accesoweb(string rFC, string password)
+        {
+            var rFCParameter = rFC != null ?
+                new ObjectParameter("RFC", rFC) :
+                new ObjectParameter("RFC", typeof(string));
+    
+            var passwordParameter = password != null ?
+                new ObjectParameter("password", password) :
+                new ObjectParameter("password", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_accesoweb_Result>("sp_accesoweb", rFCParameter, passwordParameter);
         }
     }
 }

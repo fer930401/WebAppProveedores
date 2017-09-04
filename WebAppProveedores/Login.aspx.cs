@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LogicaNegocio;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,25 +10,88 @@ namespace WebAppProveedores
 {
     public partial class Login : System.Web.UI.Page
     {
+        LogicaNegocio.LogicaNegocio logicaNegocio = new LogicaNegocio.LogicaNegocio();
         protected void Page_Load(object sender, EventArgs e)
         {
-            string urlAplicacion = HttpContext.Current.Request.ApplicationPath+"PortalUsuarios";
-            //string urlAplicacion = HttpContext.Current.Request.ApplicationPath + "PortalProveedor";
-            urlAplicacion = urlAplicacion.TrimStart('/');
-
-            if (urlAplicacion.Equals("PortalProveedor") == true)
+            if (!IsPostBack)
             {
-                ddlUsuarios.Visible = false;
-                ddlUsuarios.Enabled = false;
-                Session["visibleUsuario"] = "style = 'display:none;'";
-                Session["visibleRFC"] = "";
+                //string urlAplicacion = HttpContext.Current.Request.ApplicationPath + "PortalUsuarios";
+                string urlAplicacion = HttpContext.Current.Request.ApplicationPath + "PortalProveedor";
+                urlAplicacion = urlAplicacion.TrimStart('/');
+
+                if (urlAplicacion.Equals("PortalProveedor") == true)
+                {
+                    ddlUsuarios.Visible = false;
+                    ddlUsuarios.Enabled = false;
+                    Session["visibleUsuario"] = "style = 'display:none;'";
+                    Session["visibleRFC"] = "";
+
+                    if (string.IsNullOrEmpty(Variables.User_cve) == false)
+                    {
+                        txtRFC.Text = Variables.User_cve;
+                    }
+                }
+                else
+                {
+                    List<AccesoDatos.consWeb_Result> usuario = logicaNegocio.ListaUser("usrEnt", "001");
+                    ddlUsuarios.DataSource = usuario;
+                    ddlUsuarios.DataTextField = "nombre";
+                    ddlUsuarios.DataValueField = "user_cve";
+                    ddlUsuarios.DataBind();
+                    ddlUsuarios.Items.Insert(0, new ListItem("------Selecciona un usuario------", "NA"));
+
+                    if (string.IsNullOrEmpty(Variables.User_cve) == false)
+                    {
+                        ddlUsuarios.SelectedValue = Variables.User_cve;
+                    }
+
+                    txtRFC.Visible = false;
+                    txtRFC.Enabled = false;
+                    Session["visibleRFC"] = "style = 'display:none;'";
+                    Session["visibleUsuario"] = "";
+                }
+            }
+        }
+
+        protected void btnLogin_Click(object sender, EventArgs e)
+        {
+            string ef_cve = "001";
+            string rfc = txtRFC.Text;
+            string user_cve = ddlUsuarios.SelectedValue;
+            string password = txtPassword.Text;
+
+            if (string.IsNullOrEmpty(rfc) == true)
+            {
+                string validaUser = logicaNegocio.validaUsuario(ef_cve, user_cve, password);
+                if (string.IsNullOrEmpty(validaUser) == false)
+                {
+                    Session["user_cve"] = user_cve;
+                    Session["nom_user"] = validaUser;
+                    Response.Redirect("Usuarios.aspx", false);
+                }
+                else
+                {
+                    Variables.User_cve = user_cve;
+                    Response.Write("<script type=\"text/javascript\">alert('La informacion ingresada no es correcta, verifique de nuevo'); window.location.href = window.location.href</script>");
+                }
             }
             else
             {
-                txtRFC.Visible = false;
-                txtRFC.Enabled = false;
-                Session["visibleRFC"] = "style = 'display:none;'";
-                Session["visibleUsuario"] = "";
+                var validaUser = logicaNegocio.validaUsuarioRFC(ef_cve, rfc, password);
+                if (validaUser.Count > 0)
+                {
+                    if (string.IsNullOrEmpty(validaUser[0].rfc) == false)
+                    {
+                        Session["user_cve"] = rfc;
+                        Session["nom_user"] = validaUser[0].proveedor;
+                        Response.Redirect("Proveedores.aspx", false);
+                    }
+                }
+                else
+                {
+                    Variables.User_cve = rfc;
+                    Response.Write("<script type=\"text/javascript\">alert('La informacion ingresada no es correcta, verifique de nuevo'); window.location.href = window.location.href</script>");
+                }
             }
         }
     }

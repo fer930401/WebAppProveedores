@@ -46,10 +46,10 @@
                             </div>
                             <div class="form-group">
                                 <label for="txtPassword">Contraseña:</label>
-                                <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control"></asp:TextBox>
+                                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                             </div>
                             <br />
-                            <asp:Button ID="Button1" runat="server" Text="Entrar" CssClass="btn btn-skytex" />
+                            <asp:Button ID="btnLogin" runat="server" Text="Entrar" CssClass="btn btn-skytex" OnClick="btnLogin_Click" />
                         </form>
                     </div>
                 </div>

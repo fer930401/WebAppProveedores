@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAppProveedores", "WebApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AccesoDatos", "AccesoDatos\AccesoDatos.csproj", "{7EDE2FA9-0335-4094-8613-ED5F2102E3D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogicaNegocio", "LogicaNegocio\LogicaNegocio.csproj", "{BA1707ED-7984-4A95-8E55-C28FA3579AF2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7EDE2FA9-0335-4094-8613-ED5F2102E3D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EDE2FA9-0335-4094-8613-ED5F2102E3D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EDE2FA9-0335-4094-8613-ED5F2102E3D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA1707ED-7984-4A95-8E55-C28FA3579AF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA1707ED-7984-4A95-8E55-C28FA3579AF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA1707ED-7984-4A95-8E55-C28FA3579AF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA1707ED-7984-4A95-8E55-C28FA3579AF2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

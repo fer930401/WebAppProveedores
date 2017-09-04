@@ -4,7 +4,9 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="571fe72a70ae445196cd45ca2233c10c" Name="Diagram1" />
+      <Diagram DiagramId="571fe72a70ae445196cd45ca2233c10c" Name="Diagram1" >
+        <EntityTypeShape EntityType="skytexModel.xcuser" Width="1.5" PointX="0.75" PointY="0.75" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

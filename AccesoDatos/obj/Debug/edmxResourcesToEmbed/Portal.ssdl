@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="skytexModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="xcuser">
+    <Key>
+      <PropertyRef Name="ef_cve" />
+      <PropertyRef Name="user_cve" />
+    </Key>
+    <Property Name="ef_cve" Type="nchar" MaxLength="3" Nullable="false" />
+    <Property Name="div_cve" Type="nchar" MaxLength="3" Nullable="false" />
+    <Property Name="user_cve" Type="nchar" MaxLength="3" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="dest_mail" Type="nvarchar" MaxLength="40" />
+    <Property Name="idioma" Type="nchar" MaxLength="3" />
+    <Property Name="srv_cve" Type="nvarchar" MaxLength="25" />
+    <Property Name="path_adobe" Type="nvarchar" MaxLength="255" />
+    <Property Name="status" Type="smallint" />
+    <Property Name="sw_password" Type="smallint" />
+  </EntityType>
+  <Function Name="consWeb" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="opc" Type="nvarchar" Mode="In" />
+    <Parameter Name="prm1" Type="nvarchar" Mode="In" />
+    <Parameter Name="prm2" Type="nvarchar" Mode="In" />
+    <Parameter Name="prm3" Type="nvarchar" Mode="In" />
+    <Parameter Name="prm4" Type="int" Mode="In" />
+    <Parameter Name="prm5" Type="nvarchar" Mode="In" />
+    <Parameter Name="prm6" Type="nvarchar" Mode="In" />
+    <Parameter Name="prm7" Type="nvarchar" Mode="In" />
+    <Parameter Name="prm8" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_accesoweb" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="RFC" Type="nvarchar" Mode="In" />
+    <Parameter Name="password" Type="nvarchar" Mode="In" />
+  </Function>
+  <EntityContainer Name="skytexModelStoreContainer">
+    <EntitySet Name="xcuser" EntityType="Self.xcuser" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

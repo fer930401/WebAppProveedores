@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="skytexModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="skytexEntities" annotation:LazyLoadingEnabled="true">
+    <FunctionImport Name="consWeb" ReturnType="Collection(skytexModel.consWeb_Result)">
+      <Parameter Name="opc" Mode="In" Type="String" />
+      <Parameter Name="prm1" Mode="In" Type="String" />
+      <Parameter Name="prm2" Mode="In" Type="String" />
+      <Parameter Name="prm3" Mode="In" Type="String" />
+      <Parameter Name="prm4" Mode="In" Type="Int32" />
+      <Parameter Name="prm5" Mode="In" Type="String" />
+      <Parameter Name="prm6" Mode="In" Type="String" />
+      <Parameter Name="prm7" Mode="In" Type="String" />
+      <Parameter Name="prm8" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="xcuser" EntityType="skytexModel.xcuser" />
+    <FunctionImport Name="sp_accesoweb" ReturnType="Collection(skytexModel.sp_accesoweb_Result)">
+      <Parameter Name="RFC" Mode="In" Type="String" />
+      <Parameter Name="password" Mode="In" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="consWeb_Result">
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="25" />
+    <Property Type="String" Name="user_cve" Nullable="false" MaxLength="3" />
+    <Property Type="String" Name="password" Nullable="false" MaxLength="15" />
+    <Property Type="String" Name="rol_cve" Nullable="false" MaxLength="3" />
+  </ComplexType>
+  <EntityType Name="xcuser">
+    <Key>
+      <PropertyRef Name="ef_cve" />
+      <PropertyRef Name="user_cve" />
+    </Key>
+    <Property Name="ef_cve" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="div_cve" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="user_cve" Type="String" Nullable="false" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="password" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="dest_mail" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="idioma" Type="String" MaxLength="3" FixedLength="true" Unicode="true" />
+    <Property Name="srv_cve" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="path_adobe" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int16" />
+    <Property Name="sw_password" Type="Int16" />
+  </EntityType>
+  <ComplexType Name="sp_accesoweb_Result">
+    <Property Type="String" Name="rfc" Nullable="true" MaxLength="40" />
+    <Property Type="String" Name="proveedor" Nullable="true" MaxLength="255" />
+    <Property Type="String" Name="cc_tipo" Nullable="true" MaxLength="1" />
+    <Property Type="String" Name="cc_cve" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="tipdoc_cve" Nullable="true" MaxLength="6" />
+    <Property Type="String" Name="nom_doc" Nullable="true" MaxLength="25" />
+  </ComplexType>
+</Schema>

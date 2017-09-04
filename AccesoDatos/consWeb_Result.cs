@@ -13,7 +13,9 @@ namespace AccesoDatos
     
     public partial class consWeb_Result
     {
-        public string ef_cve { get; set; }
-        public string nom1 { get; set; }
+        public string nombre { get; set; }
+        public string user_cve { get; set; }
+        public string password { get; set; }
+        public string rol_cve { get; set; }
     }
 }

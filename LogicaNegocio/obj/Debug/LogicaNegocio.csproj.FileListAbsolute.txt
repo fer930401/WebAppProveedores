@@ -1,0 +1,9 @@
+C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\LogicaNegocio\bin\Debug\LogicaNegocio.dll
+C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\LogicaNegocio\bin\Debug\LogicaNegocio.pdb
+C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\LogicaNegocio\bin\Debug\AccesoDatos.dll
+C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\LogicaNegocio\bin\Debug\EntityFramework.dll
+C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\LogicaNegocio\bin\Debug\AccesoDatos.pdb
+C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\LogicaNegocio\bin\Debug\EntityFramework.xml
+C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\LogicaNegocio\obj\Debug\LogicaNegocio.csprojResolveAssemblyReference.cache
+C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\LogicaNegocio\obj\Debug\LogicaNegocio.dll
+C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\LogicaNegocio\obj\Debug\LogicaNegocio.pdb

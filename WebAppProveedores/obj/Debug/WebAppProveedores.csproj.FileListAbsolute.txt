@@ -19,3 +19,11 @@ C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\WebAppPr
 C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\WebAppProveedores\obj\Debug\WebAppProveedores.csprojResolveAssemblyReference.cache
 C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\WebAppProveedores\obj\Debug\WebAppProveedores.dll
 C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\WebAppProveedores\obj\Debug\WebAppProveedores.pdb
+C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\WebAppProveedores\bin\AccesoDatos.dll
+C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\WebAppProveedores\bin\LogicaNegocio.dll
+C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\WebAppProveedores\bin\EntityFramework.dll
+C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\WebAppProveedores\bin\AccesoDatos.pdb
+C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\WebAppProveedores\bin\LogicaNegocio.pdb
+C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\WebAppProveedores\bin\EntityFramework.xml
+C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\WebAppProveedores\bin\EntityFramework.SqlServer.dll
+C:\Users\fernando.garcia\Documents\Repositorios\WebAppPortalProveedores\WebAppProveedores\bin\EntityFramework.SqlServer.xml
