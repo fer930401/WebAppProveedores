@@ -82,5 +82,26 @@ namespace AccesoDatos
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_accesoweb_Result>("sp_accesoweb", rFCParameter, passwordParameter);
         }
+    
+        public virtual ObjectResult<sp_cboWebXML_Result> sp_cboWebXML(string rfc_emisor, string cbo, string prm1, string prm2)
+        {
+            var rfc_emisorParameter = rfc_emisor != null ?
+                new ObjectParameter("rfc_emisor", rfc_emisor) :
+                new ObjectParameter("rfc_emisor", typeof(string));
+    
+            var cboParameter = cbo != null ?
+                new ObjectParameter("cbo", cbo) :
+                new ObjectParameter("cbo", typeof(string));
+    
+            var prm1Parameter = prm1 != null ?
+                new ObjectParameter("prm1", prm1) :
+                new ObjectParameter("prm1", typeof(string));
+    
+            var prm2Parameter = prm2 != null ?
+                new ObjectParameter("prm2", prm2) :
+                new ObjectParameter("prm2", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_cboWebXML_Result>("sp_cboWebXML", rfc_emisorParameter, cboParameter, prm1Parameter, prm2Parameter);
+        }
     }
 }

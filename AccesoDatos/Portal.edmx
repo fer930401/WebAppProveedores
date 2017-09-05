@@ -37,6 +37,12 @@
           <Parameter Name="RFC" Type="nvarchar" Mode="In" />
           <Parameter Name="password" Type="nvarchar" Mode="In" />
         </Function>
+        <Function Name="sp_cboWebXML" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="rfc_emisor" Type="nvarchar" Mode="In" />
+          <Parameter Name="cbo" Type="nvarchar" Mode="In" />
+          <Parameter Name="prm1" Type="nvarchar" Mode="In" />
+          <Parameter Name="prm2" Type="nvarchar" Mode="In" />
+        </Function>
         <EntityContainer Name="skytexModelStoreContainer">
           <EntitySet Name="xcuser" EntityType="Self.xcuser" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
@@ -60,6 +66,12 @@
           <FunctionImport Name="sp_accesoweb" ReturnType="Collection(skytexModel.sp_accesoweb_Result)">
             <Parameter Name="RFC" Mode="In" Type="String" />
             <Parameter Name="password" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_cboWebXML" ReturnType="Collection(skytexModel.sp_cboWebXML_Result)">
+            <Parameter Name="rfc_emisor" Mode="In" Type="String" />
+            <Parameter Name="cbo" Mode="In" Type="String" />
+            <Parameter Name="prm1" Mode="In" Type="String" />
+            <Parameter Name="prm2" Mode="In" Type="String" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="consWeb_Result">
@@ -92,6 +104,10 @@
           <Property Type="String" Name="cc_cve" Nullable="true" MaxLength="6" />
           <Property Type="String" Name="tipdoc_cve" Nullable="true" MaxLength="6" />
           <Property Type="String" Name="nom_doc" Nullable="true" MaxLength="25" />
+        </ComplexType>
+        <ComplexType Name="sp_cboWebXML_Result">
+          <Property Type="String" Name="descripcion" Nullable="false" MaxLength="22" />
+          <Property Type="String" Name="valor" Nullable="false" MaxLength="6" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -135,6 +151,14 @@
                 <ScalarProperty Name="cc_cve" ColumnName="cc_cve" />
                 <ScalarProperty Name="tipdoc_cve" ColumnName="tipdoc_cve" />
                 <ScalarProperty Name="nom_doc" ColumnName="nom_doc" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="sp_cboWebXML" FunctionName="skytexModel.Store.sp_cboWebXML">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="skytexModel.sp_cboWebXML_Result">
+                <ScalarProperty Name="descripcion" ColumnName="nombre" />
+                <ScalarProperty Name="valor" ColumnName="tipdoc_cve" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

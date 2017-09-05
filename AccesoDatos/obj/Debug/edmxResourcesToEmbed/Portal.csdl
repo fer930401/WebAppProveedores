@@ -17,6 +17,12 @@
       <Parameter Name="RFC" Mode="In" Type="String" />
       <Parameter Name="password" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="sp_cboWebXML" ReturnType="Collection(skytexModel.sp_cboWebXML_Result)">
+      <Parameter Name="rfc_emisor" Mode="In" Type="String" />
+      <Parameter Name="cbo" Mode="In" Type="String" />
+      <Parameter Name="prm1" Mode="In" Type="String" />
+      <Parameter Name="prm2" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <ComplexType Name="consWeb_Result">
     <Property Type="String" Name="nombre" Nullable="false" MaxLength="25" />
@@ -48,5 +54,9 @@
     <Property Type="String" Name="cc_cve" Nullable="true" MaxLength="6" />
     <Property Type="String" Name="tipdoc_cve" Nullable="true" MaxLength="6" />
     <Property Type="String" Name="nom_doc" Nullable="true" MaxLength="25" />
+  </ComplexType>
+  <ComplexType Name="sp_cboWebXML_Result">
+    <Property Type="String" Name="descripcion" Nullable="false" MaxLength="22" />
+    <Property Type="String" Name="valor" Nullable="false" MaxLength="6" />
   </ComplexType>
 </Schema>

@@ -1,6 +1,7 @@
 ﻿using LogicaNegocio;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -33,7 +34,7 @@ namespace WebAppProveedores
                 }
                 else
                 {
-                    List<AccesoDatos.consWeb_Result> usuario = logicaNegocio.ListaUser("usrEnt", "001");
+                    DataTable usuario = logicaNegocio.ListaUser("usrEnt", "001");
                     ddlUsuarios.DataSource = usuario;
                     ddlUsuarios.DataTextField = "nombre";
                     ddlUsuarios.DataValueField = "user_cve";
@@ -67,7 +68,9 @@ namespace WebAppProveedores
                 {
                     Session["user_cve"] = user_cve;
                     Session["nom_user"] = validaUser;
-                    Response.Redirect("Usuarios.aspx", false);
+                    Session["usuario"] = 1;
+                    /* redirige al formulario para la seleccion del tipo de proveedor y el nombre del proveedor */
+                    Response.Redirect("Proveedor.aspx", false);
                 }
                 else
                 {
@@ -84,7 +87,8 @@ namespace WebAppProveedores
                     {
                         Session["user_cve"] = rfc;
                         Session["nom_user"] = validaUser[0].proveedor;
-                        Response.Redirect("Proveedores.aspx", false);
+                        Session["usuario"] = 0;
+                        Response.Redirect("Facturas.aspx", false);
                     }
                 }
                 else

@@ -40,5 +40,13 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_cboWebXML" FunctionName="skytexModel.Store.sp_cboWebXML">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="skytexModel.sp_cboWebXML_Result">
+          <ScalarProperty Name="descripcion" ColumnName="nombre" />
+          <ScalarProperty Name="valor" ColumnName="tipdoc_cve" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -32,6 +32,12 @@
     <Parameter Name="RFC" Type="nvarchar" Mode="In" />
     <Parameter Name="password" Type="nvarchar" Mode="In" />
   </Function>
+  <Function Name="sp_cboWebXML" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="rfc_emisor" Type="nvarchar" Mode="In" />
+    <Parameter Name="cbo" Type="nvarchar" Mode="In" />
+    <Parameter Name="prm1" Type="nvarchar" Mode="In" />
+    <Parameter Name="prm2" Type="nvarchar" Mode="In" />
+  </Function>
   <EntityContainer Name="skytexModelStoreContainer">
     <EntitySet Name="xcuser" EntityType="Self.xcuser" Schema="dbo" store:Type="Tables" />
   </EntityContainer>

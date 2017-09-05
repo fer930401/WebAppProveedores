@@ -73,6 +73,9 @@
     <Compile Include="sp_accesoweb_Result.cs">
       <DependentUpon>Portal.tt</DependentUpon>
     </Compile>
+    <Compile Include="sp_cboWebXML_Result.cs">
+      <DependentUpon>Portal.tt</DependentUpon>
+    </Compile>
     <Compile Include="xcuser.cs">
       <DependentUpon>Portal.tt</DependentUpon>
     </Compile>
