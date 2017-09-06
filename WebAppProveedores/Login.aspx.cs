@@ -16,8 +16,8 @@ namespace WebAppProveedores
         {
             if (!IsPostBack)
             {
-                //string urlAplicacion = HttpContext.Current.Request.ApplicationPath + "PortalUsuarios";
-                string urlAplicacion = HttpContext.Current.Request.ApplicationPath + "PortalProveedor";
+                string urlAplicacion = HttpContext.Current.Request.ApplicationPath + "PortalUsuarios";
+                //string urlAplicacion = HttpContext.Current.Request.ApplicationPath + "PortalProveedor";
                 urlAplicacion = urlAplicacion.TrimStart('/');
 
                 if (urlAplicacion.Equals("PortalProveedor") == true)

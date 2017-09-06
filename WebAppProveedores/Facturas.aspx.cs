@@ -34,7 +34,32 @@ namespace WebAppProveedores
             Session.Clear();
             Session.RemoveAll();
             Session.Abandon();
-            Response.Redirect("Login.aspx");
+            Response.Redirect("Login.aspx", false);
+        }
+
+        protected void cambiaProve_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Proveedor.aspx", false);
+        }
+
+        protected void etiquetas_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("PreEntregaMercancia.aspx", false);
+        }
+
+        protected void AcuseMerca_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AcuseMercancia.aspx", false);
+        }
+
+        protected void seguimiento_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Seguimiento.aspx", false);
+        }
+
+        protected void subirFact_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Facturas.aspx", false);
         }
     }
 }
